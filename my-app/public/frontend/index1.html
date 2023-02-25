@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    .ancestors * {
+      display: block;
+      border: 2px solid lightgrey;
+      color: lightgrey;
+      padding: 5px;
+      margin: 15px;
+    }
+  </style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script>
+    $(document).ready(function () {
+
+
+      // find: tim kiem the html/id/class con
+
+      // closest nguoc lai, quay trở ra the cha/id/class cha
+
+      // text(): lay doan text ben trong html 
+      // text(123): set 123 vao ben trong the html
+
+      // val(): lay value cua input
+      // val(123): set 123 vao value
+
+      $("li").click(function () {
+        // $("li").closest("ul.xx").css({ "color": "red", "border": "2px solid red" });
+
+        // $("li").closest("ul.xx").find("span").css({"color": "red", "border": "2px solid red"});
+
+
+        // var xx = $("li").closest("ul.xx").find("span").text()
+        // alert(xx)
+
+        // $("li").closest("ul.xx").find("span").text("sa le la")
+
+        // var xx = $("li").closest("ul.xx").find("input").val()
+        // alert(xx)
+
+        // $("li").closest("ul.xx").find("input").val("111111")
+
+        var xx = $("li").closest("ul.xx").find("img").attr("src")
+        alert(xx)
+
+      })
+
+    });
+  </script>
+</head>
+
+<body class="ancestors">body (great-great-grandparent)
+
+  <ul class="xx">ul xx (second ancestor - second grandparent)
+
+    <ul>ul (first ancestor - first grandparent)
+
+      <li>li (direct parent)
+        <span>linh kute </span>
+        <input type="text" name="" value="1234">
+        <img src="xxx.png">
+      </li>
+
+
+
+    </ul>
+  </ul>
+
+</body>
+
+</html>
+
+
+<!-- 
+khi click ADD TO CART:
+từ vị tri thang nay (this) dựa theo class lay: img, name, price, id
+và tao objcon nhu sau:
+  {
+    img:...
+    price:..
+    name:..
+    qty:1
+  }
+
+va sau do dua objcon nay vao objCha, va dung chinh ID cua product làm key
+(ID chua co, nên tụ them vao trong html, 6 product 6 ID)
+
+{
+  product1: {
+    img:...
+    price:..
+    name:..
+    qty:1
+  }
+}
+=> dua vao local
+{
+  product1: {
+    img:...
+    price:..
+    name:..
+    qty:3
+  },
+  product2: {
+    img:...
+    price:..
+    name:..
+    qty:2
+  },
+  ...
+} -->
